@@ -4,3 +4,4 @@ scip
 matplotlib
 scikit-learn
 pytest
+moviepy
