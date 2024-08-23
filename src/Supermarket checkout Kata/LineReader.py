@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Checkout.py
+LineReader.py
 Features:
 - Can call readFromFile
 - readFromFile returns correct string
