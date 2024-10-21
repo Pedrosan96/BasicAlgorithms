@@ -112,9 +112,9 @@ def heap_max(my_array: list, n: int, idx: int):
         heap_max(my_array, n, biggest)
 
 
-def heap_sort(my_array: list)
+def heap_sort(my_array: list):
     """
-    Max heap algorithm
+    Max heap sort algorithm
     :param my_array: Array to sort
     :return: 
     """
@@ -125,3 +125,17 @@ def heap_sort(my_array: list)
     for iterator in range(n-1, 0, -1):
         my_array[iterator], my_array[0] = my_array[0], my_array[iterator]
         heap_max(my_array, iterator, 0)
+
+
+def insertion_sort(my_array: list):
+    """
+    Insertion sort algorithm
+    :param my_array: Array to sort
+    :return:
+    """
+    for idx in range(1, len(my_array)):
+        swap_idx = idx
+        while my_array[swap_idx - 1] > my_array[swap_idx] and swap_idx > 0:
+            my_array[swap_idx - 1], my_array[swap_idx] = my_array[swap_idx], my_array[swap_idx - 1]
+            swap_idx -= 1
+            
