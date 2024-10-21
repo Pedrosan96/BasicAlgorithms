@@ -88,3 +88,40 @@ def merge_sort(my_array: list):
             j += 1
             k += 1
 
+
+def heap_max(my_array: list, n: int, idx: int):
+    """
+    Build the Heap Max structure for the array
+    :param my_array: Array for the binary tree
+    :param n: Length of th array
+    :param idx: Parent index to start
+    :return:
+    """
+    biggest = idx
+    left_child = 2 * idx + 1
+    right_child = 2 * idx + 2
+
+    if left_child < n and my_array[left_child] > my_array[biggest]:
+        biggest = left_child
+
+    if right_child < n and my_array[right_child] > my_array[biggest]:
+        biggest = right_child
+
+    if biggest != idx:
+        my_array[biggest], my_array[idx] = my_array[idx], my_array[biggest]     # swap
+        heap_max(my_array, n, biggest)
+
+
+def heap_sort(my_array: list)
+    """
+    Max heap algorithm
+    :param my_array: Array to sort
+    :return: 
+    """
+    n = len(my_array)
+    for iterator in range(n//2 - 1, -1, -1):    # Create the Max heap
+        heap_max(my_array, n, iterator)
+
+    for iterator in range(n-1, 0, -1):
+        my_array[iterator], my_array[0] = my_array[0], my_array[iterator]
+        heap_max(my_array, iterator, 0)
