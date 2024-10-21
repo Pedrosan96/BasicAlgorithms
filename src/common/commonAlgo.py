@@ -129,7 +129,7 @@ def heap_sort(my_array: list):
 
 def insertion_sort(my_array: list):
     """
-    Insertion sort algorithm
+    Insertion sort algorithm: Swap from left to right if left is minor
     :param my_array: Array to sort
     :return:
     """
@@ -138,4 +138,18 @@ def insertion_sort(my_array: list):
         while my_array[swap_idx - 1] > my_array[swap_idx] and swap_idx > 0:
             my_array[swap_idx - 1], my_array[swap_idx] = my_array[swap_idx], my_array[swap_idx - 1]
             swap_idx -= 1
-            
+
+
+def selection_sort(my_array: list):
+    """
+    Selection sort algorithm: finds the current minimum ad swap it to the until the left
+    :param my_array: Array to sort
+    :return:
+    """
+    n = len(my_array)
+    for idx in range(0, n - 1):
+        curr_min_idx = idx
+        for new_idx in range(idx + 1, n):   # find the current minimum
+            if my_array[new_idx] < my_array[curr_min_idx]:
+                curr_min_idx = new_idx
+        my_array[idx], my_array[curr_min_idx] = my_array[curr_min_idx], my_array[idx]
